@@ -17,8 +17,8 @@ inquirer
     axios.get(`https://api.github.com/search/users?q=+${response.name}`)
     .then(function (res) {
         // handle success
-        console.log(res.data.items[0].repos_url);
-        axios.get(res.data.items[0].repos_url)
+        console.log(res.data);
+        axios.get(res.data.items[res.data.items.length - 1].repos_url)
     .then(function (info) {
         // handle success
         console.log(info.data[0]);
